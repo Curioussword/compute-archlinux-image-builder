@@ -34,7 +34,7 @@ trap cleanup EXIT
 echo '- Creating an empty raw disk image.'
 work_dir=$(mktemp --directory --tmpdir="$PWD" build-arch-gce.XXX)
 disk_raw=$work_dir/disk.raw
-truncate --size=10G -- "$disk_raw"
+truncate --size=40G -- "$disk_raw"
 
 echo '- Setting up a loop device and partitioning the image.'
 loop_dev=$(losetup --find --partscan --show -- "$disk_raw")
